@@ -1,0 +1,32 @@
+{
+  "name": "cointrash-exchange",
+  "version": "1.0.0",
+  "description": "the coin for trash Application",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "consign": "^0.1.2",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^5.5.4",
+    "mongoose": "^4.3.7",
+    "nvm": "^0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/habeascorpse/cointrash-exchange.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Alan de Oliveira, Bruce Albuquerque, Erlan Fonseca, Marcos Adriel Rost",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/habeascorpse/cointrash-exchange/issues"
+  },
+  "homepage": "https://github.com/habeascorpse/cointrash-exchange#readme"
+}
