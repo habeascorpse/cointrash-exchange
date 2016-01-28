@@ -6,15 +6,18 @@ var schema = mongoose.Schema({
         required : true,
         unique: true
     },
-    password: {
+    name: {
         type: String,
         required: true
     },
-    status: {
-        type: Number,
+    mail: {
+        type: String,
         required: true
+    },
+    maps_location: {
+        type: String
     }
     
 });
 
-mongoose.model('User', schema);
+mongoose.model('People', schema);
