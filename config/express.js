@@ -6,6 +6,7 @@ module.exports = function () {
     app.set('secret', 'parangamicotirimirruaro');
     consign({cwd: 'app'})
     .include('models')
+    .then('dao')
     .then('api')
     .then('routes')
     .into(app);
