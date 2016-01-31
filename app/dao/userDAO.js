@@ -1,6 +1,7 @@
 var mongoose = require('mongoose'); 
 var jwt = require('jsonwebtoken');
-function UserDAO(app) {
+var peopleDAO = {};
+function UserDAO() {
     
     this.model = mongoose.model('User');
     
@@ -54,34 +55,22 @@ UserDAO.prototype.createUser = function(register,callback) {
         status: - 1
     };
     
-    var people = {
-        name: register.name,
-        mail: register.mail,
-        login: register.login
-        
-    };
-    
-    
-    var modelPeople = mongoose.model('People');
     this.model.create(user)
     .then(
-            function(u) {
-                
-            },
-            function(error) {
-                callback(false);
-            }
-        );
-        
-    modelPeople.create(people)
-    .then(
-            function(p) {
-                callback(true)
-            },
-            function(error) {
-                callback(false);
-            }
+        function(u) {
+            
+            
+            peopleDAO.create(register, function(status) {
+               return callback(status);
+            });
+            
+        },
+        function(error) {
+            callback(false);
+        }
     );
+        
+    
         
 }
 
@@ -89,6 +78,6 @@ UserDAO.prototype.createUser = function(register,callback) {
 
 
 module.exports = function(app) {
-    
+    peopleDAO = new app.dao.peopleDAO;
     return UserDAO;
 }

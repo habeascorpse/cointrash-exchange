@@ -3,8 +3,7 @@ var mongoose = require('mongoose');
 var schema = mongoose.Schema({
     login : {
         type: String,
-        required : true,
-        unique: true
+        required : true
     },
     name: {
         type: String,
@@ -13,9 +12,6 @@ var schema = mongoose.Schema({
     mail: {
         type: String,
         required: true
-    },
-    maps_location: {
-        type: String
     }
     
 });

@@ -3,8 +3,7 @@ var mongoose = require('mongoose');
 var schema = mongoose.Schema({
     login : {
         type: String,
-        required : true,
-        unique: true
+        required : true
     },
     password: {
         type: String,
