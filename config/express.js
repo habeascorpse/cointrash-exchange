@@ -8,6 +8,7 @@ module.exports = function () {
     .include('models')
     .then('dao')
     .then('api')
+    .then('routes/user.js')
     .then('routes')
     .into(app);
 

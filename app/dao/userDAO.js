@@ -20,8 +20,7 @@ UserDAO.prototype.authenticate = function(login, password, callback) {
                 }
                 else {
                     
-                    token = jwt.sign(user,'secret',{
-                        expiresIn: "24h"
+                    token = jwt.sign(login,'secret',{
                     });
                     
                     console.log('token created and send to client');
@@ -40,7 +39,7 @@ UserDAO.prototype.authenticate = function(login, password, callback) {
 
 UserDAO.prototype.verifyToken = function(token, callback) {
     
-    jwt.verify(token, function (error,decoded) {
+    jwt.verify(token,"secret", function (error,decoded) {
         callback(error,decoded);
         
     })
@@ -73,9 +72,6 @@ UserDAO.prototype.createUser = function(register,callback) {
     
         
 }
-
-
-
 
 module.exports = function(app) {
     peopleDAO = new app.dao.peopleDAO;

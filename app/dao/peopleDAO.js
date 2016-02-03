@@ -31,6 +31,20 @@ PeopleDAO.prototype.create = function(register,callback) {
         
 }
 
+PeopleDAO.prototype.getPeople = function(login, callback) {
+    
+    this.model.find({'login' : login})
+    .then(
+        function (p) {
+            callback(p);
+        },
+        function (error) {
+            callback(false);
+        } 
+    );
+    
+}
+
 
 
 

@@ -24,13 +24,15 @@ module.exports = function(app) {
     
     userAPI.verifyToken = function(req,res) {
         var token = req.headers['x-access-token'];
+        
         userDAO.verifyToken(token, function (error,decoded) {
             if (error) {
                 console.log('invalid token');
                 res.sendStatus(401);
             }
-            res.user = decoded;
-            next();
+            
+            req.user = decoded;
+            req.next();
         })
     }
     
