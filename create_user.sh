@@ -1,0 +1,2 @@
+#!/bin/bash
+curl --header "x-access-token: eyJhbGciOiJIUzI1NiJ9.YXNkZnNkZmxhbg.Xg4tWXOW-MrmVaGKfjoHGkHRGjZ90CvRPPBVsuiYhEI" -X POST -d "{'origin':'123','target':'xyz', 'amount':'123.000'}" http://localhost:3000/transaction/swap -v

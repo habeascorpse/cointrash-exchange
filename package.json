@@ -28,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/habeascorpse/cointrash-exchange/issues"
   },
-  "homepage": "https://github.com/habeascorpse/cointrash-exchange#readme"
+  "homepage": "https://github.com/habeascorpse/cointrash-exchange#readme",
+  "engines": {
+    "node": "4.1.1"
+  }
 }
