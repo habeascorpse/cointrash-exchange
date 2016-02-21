@@ -22,10 +22,6 @@ var schema = mongoose.Schema({
     date: {
         type: Date,
         required: true
-    },
-    transaction_id: {
-        type: Number,
-        required: true
     }
     
 });

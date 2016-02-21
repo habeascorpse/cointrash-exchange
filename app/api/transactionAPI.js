@@ -12,8 +12,15 @@ module.exports = function(app) {
             
             walletDAO.findByNumber(req.body.target,
             function(wallet_target) {
-                transactionDAO.swap(wallet_origin, wallet_target, req.body.amount, function() {
-                    
+
+                transactionDAO.swap(wallet_origin, wallet_target, req.body.amount, function(t, err) {
+                    if (!err) {
+                        console.log(t);
+                        res.json(t);
+                    } else {
+                        console.log(err);
+                        res.sendStatus(503);
+                    }
                     
                 });
                 
